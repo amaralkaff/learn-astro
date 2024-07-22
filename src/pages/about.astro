@@ -1,23 +1,56 @@
 ---
+const pageTitle = 'About Me'
 
+const identity = {
+    name: 'AmangLy',
+    role: 'Frontend Developer',
+    country: 'Indonesia',
+    description: 'I love to code and play video games',
+    site: 'https://amangly.fun',
+    X: 'https://x.com/amangly',
+    github: 'https://github.com/amaralkaff',
+}
+
+const skills = [
+    "HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB", "GraphQL", "Apollo", "RESTful APIs", 
+    "Git", "GitHub", "Netlify", "Vercel", "Jest", "React Testing Library", "OBS Studio", "Firebase", "AWS", 
+    "Linux", "macOS", "Android", "Web Development", "Mobile Development"
+]
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/blog">Blog</a>
+    </nav>
 
-		<h1>About Me</h1>
-        <h1>hello wazzup my name is AmangLy, Im new Astro developer</h1>
-        <p>Im a web developer and I love to code</p>
-        <p>This site will update as I complete more of tutorials</p>
-	</body>
+    <main>
+      <h1>{pageTitle}</h1>
+      <h2>Hello, wazzup! My name is AmangLy, I'm a new Astro developer.</h2>
+      <p>I'm a frontend developer from Indonesia.</p>
+      <p>Here are a few things about me:</p>
+      <ul>
+        <li>Name: {identity.name}</li>
+        <li>Role: {identity.role}</li>
+        <li>Description: {identity.description}</li>
+        <li>Country: {identity.country}</li>
+        <li>Skills: {skills.join(', ')}</li>
+      </ul>
+      <p>My Social Media:</p>
+      <ul>
+        <li><a href={identity.site} target="_blank" rel="noopener noreferrer">Website</a></li>
+        <li><a href={identity.X} target="_blank" rel="noopener noreferrer">X</a></li>
+        <li><a href={identity.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </main>
+  </body>
 </html>
