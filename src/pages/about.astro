@@ -1,48 +1,56 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro'
+const pageTitle = 'About Me'
 
-const pageTitle = 'About Me';
 const identity = {
-    name: 'AmangLy',
-    role: 'Frontend Developer',
-    country: 'Indonesia',
-    description: 'I love to code and play video games',
-    site: 'https://amangly.fun',
-    X: 'https://x.com/amangly',
-    github: 'https://github.com/amaralkaff',
+  name: 'AmangLy',
+  role: 'Frontend Developer',
+  country: 'Indonesia',
+  description: 'I love to code and play video games',
+  site: 'https://amangly.fun',
+  X: 'https://x.com/amangly',
+  github: 'https://github.com/amaralkaff',
 }
 
 const skills = [
-    "HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB", "GraphQL", "Apollo", "RESTful APIs", 
-    "Git", "GitHub", "Netlify", "Vercel", "Jest", "React Testing Library", "OBS Studio", "Firebase", "AWS", 
-    "Linux", "macOS", "Android", "Web Development", "Mobile Development"
+  "HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB", "GraphQL", "Apollo", "RESTful APIs", 
+  "Git", "GitHub", "Netlify", "Vercel", "Jest", "React Testing Library", "OBS Studio", "Firebase", "AWS", 
+  "Linux", "macOS", "Android", "Web Development", "Mobile Development"
 ]
 
 const happy = true 
-const finished = false
+const finished = true
 const goal = 3
-const skillColor = "navy"
+const skillColor = "white"
 const fontWeight = "bold"
 const textCase = "uppercase"
 ---
+
 <BaseLayout pageTitle={pageTitle}>
-  <h2>Hello, wazzup! My name is AmangLy, I'm a new Astro developer.</h2>
-  <p>I'm a frontend developer from Indonesia.</p>
-  <p>Here are a few things about me:</p>
-  <ul>
-    <li>Name: {identity.name}</li>
-    <li>Role: {identity.role}</li>
-    <li>Description: {identity.description}</li>
-    <li>Country: {identity.country}</li>
-  </ul>
-  <p>My Skills are:</p>
-  <ul>
-    {skills.map(skill => (
-      <li>{skill}</li>
-    ))}
-  </ul>
-  {happy && <p>I'm happy to be here!</p>}
-  {finished && <p>I have finished this tutorial</p>}
-  {goal === 3 ? <p>My goal finished 3 days.</p> : <p>My goal is not finished yet.</p>}
-  <p>My Social Media:</p>
+  <main>
+    <h2>Hello, wazzup! My name is AmangLy, I'm a new Astro developer.</h2>
+    <p>I'm a frontend developer from Indonesia.</p>
+    <p>Here are a few things about me:</p>
+    <ul>
+      <li>Name: {identity.name}</li>
+      <li>Role: {identity.role}</li>
+      <li>Description: {identity.description}</li>
+      <li>Country: {identity.country}</li>
+    </ul>
+    <p>My Skills are:</p>
+    <ul class="skills">
+      {skills.map(skill => (
+        <li>{skill}</li>
+      ))}
+    </ul>
+    {happy && <p>I'm happy to be here!</p>}
+    {finished && <p>I have finished this tutorial</p>}
+    {goal === 3 ? <p>My goal finished 3 days.</p> : <p>My goal is not finished yet.</p>}
+    <p>My Social Media:</p>
+    <ul>
+      <li><a href={identity.site} target="_blank" rel="noopener noreferrer">Website</a></li>
+      <li><a href={identity.X} target="_blank" rel="noopener noreferrer">X</a></li>
+      <li><a href={identity.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </main>
 </BaseLayout>
