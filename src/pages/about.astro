@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css'
+
 const pageTitle = 'About Me'
 
 const identity = {
@@ -16,6 +18,13 @@ const skills = [
     "Git", "GitHub", "Netlify", "Vercel", "Jest", "React Testing Library", "OBS Studio", "Firebase", "AWS", 
     "Linux", "macOS", "Android", "Web Development", "Mobile Development"
 ]
+
+const happy = true 
+const finished = false
+const goal = 3
+const skillColor = "navy"
+const fontWeight = "bold"
+const textCase = "uppercase"
 ---
 
 <html lang="en">
@@ -25,6 +34,17 @@ const skills = [
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skills {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -43,8 +63,18 @@ const skills = [
         <li>Role: {identity.role}</li>
         <li>Description: {identity.description}</li>
         <li>Country: {identity.country}</li>
-        <li>Skills: {skills.join(', ')}</li>
       </ul>
+      <p>
+        My Skills are:
+      </p>
+      <ul>
+        {skills.map(skill => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+      {happy && <p>I'm happy to be here!</p>}
+      {finished && <p>I have finished this tutorial</p>}
+      {goal === 3 ? <p>My goal finished 3 days.</p> : <p>My goal is not finished yet.</p>}
       <p>My Social Media:</p>
       <ul>
         <li><a href={identity.site} target="_blank" rel="noopener noreferrer">Website</a></li>
