@@ -1,0 +1,29 @@
+---
+const platforms = [
+  { name: 'GitHub', url: ['https://github.com/amaralkaff', 'https://github.com/amaralkaff?tab=repositories'] },
+  { name: 'Instagram', url: 'https://instagram.com/amaralkaff' },
+  { name: 'Tiktok', url: 'https://tiktok.com/@amangly' },
+];
+---
+
+<footer>
+  <p>
+    Learn more about my project on 
+    <a href={platforms[0].url[0]}>{platforms[0].name}</a>
+  </p>
+  <p>
+    And don't forget to follow me on 
+    {platforms.slice(1).map((platform, index) => (
+      <span>
+        {index > 0 && ', '}
+        <a
+            href={Array.isArray(platform.url) ? platform.url[0] : platform.url}
+            target="_blank" 
+            rel="noopener noreferrer"
+        >
+            {platform.name}
+        </a>
+        </span>
+    ))}
+    </p>
+</footer>
