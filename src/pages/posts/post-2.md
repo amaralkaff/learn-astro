@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: My Second Blog Post
 author: AmangLy
 description: "After learning some Astro, I want switch from react to astro XD"

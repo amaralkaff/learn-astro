@@ -1,10 +1,11 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: My Third Blog Post
-authot: AmangLy 
+author: AmangLy
 description: "I had some challenges, but finding solution on internet really helped!"
-    image:
-    url: "https://docs.astro.build/assets/rays.webp"
-    alt: "The Astro logo on a dark background with rainbow rays."
+image:
+  url: "https://docs.astro.build/assets/rays.webp"
+  alt: "The Astro logo on a dark background with rainbow rays."
 pubDate: 2024-07-23
 tags: ["astro", "learning in public", "setbacks", "community"]
 ---
